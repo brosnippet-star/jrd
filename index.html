@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TATA Steel Login</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('image/J.R.D._Tata_Stadium.jpg') no-repeat center center/cover;
+            filter: brightness(0.78) blur(0.8px);
+            z-index: -1;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .card {
+            position: relative;
+            z-index: 2;
+            width: 30%;
+            height: 530px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .logo-box {
+            width: 95%;
+            margin: auto;
+            background: #1e73be;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            text-align: center;
+            margin-top: -70px;
+            margin-bottom: 20px;
+        }
+
+        .logo-box img {
+            width: 180px;
+        }
+
+        .notice {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .notice span.red {
+            color: red;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .btn {
+            width: 100%;
+            background: #1e73be;
+            color: white;
+            padding: 15px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .links {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            color: white;
+            font-size: 14px;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            z-index: 2;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin-left: 60px;
+        }
+
+        /* Loader Full Screen */
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        /* Spinner Animation */
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 6px solid #ffffff70;
+            border-top-color: #1e73be;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        /* -------------------- */
+/* RESPONSIVE DESIGN    */
+/* -------------------- */
+
+/* Medium Devices (Tablets, small laptops) */
+@media (max-width: 1024px) {
+    .card {
+        width: 50%;
+        height: auto;
+        padding: 25px;
+    }
+
+    .logo-box img {
+        width: 150px;
+    }
+}
+
+/* Small Tablets & Large Phones */
+@media (max-width: 768px) {
+    .card {
+        width: 70%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .logo-box {
+        margin-top: -50px;
+        padding: 15px;
+    }
+
+    .logo-box img {
+        width: 130px;
+    }
+
+    input {
+        padding: 10px;
+    }
+
+    .btn {
+        padding: 12px;
+        font-size: 15px;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+    .card {
+        width: 85%;
+        height: auto;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .logo-box {
+        margin-top: -40px;
+        padding: 12px;
+        border-radius: 10px;
+    }
+
+    .logo-box img {
+        width: 120px;
+    }
+
+    .notice {
+        font-size: 12px;
+    }
+
+    input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        font-size: 12px;
+        padding: 0;
+    }
+
+    footer a {
+        margin-left: 10px;
+        font-size: 12px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+    .card {
+        width: 92%;
+        padding: 10px;
+    }
+
+    .logo-box img {
+        width: 100px;
+    }
+
+    .notice {
+        font-size: 11px;
+    }
+}
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="overlay"></div>
+
+    <div class="card">
+
+        <div class="logo-box">
+            <img src="image/tata-steel-logo.png" alt="TATA Steel" />
+        </div>
+
+        <div class="notice">
+            * TSL Employee Member, Enter Personnel Number & ADID Password.<br>
+            * Non Employee Member, Enter Membership No. & Password.<br>
+            * First time users, Please Signup Once<br>
+            * For non-employee member, to generate password, click on 'Forgot password'.<br><br>
+            <span class="red">Important Notice: Rescheduling of Timings</span> – <a href="#">Please Click here</a><br><br>
+        </div>
+
+        <!-- FORM STARTS HERE -->
+        <form id="loginForm">
+
+            <label>Personnel/Membership No.*</label>
+            <input type="text" required />
+
+            <label>Password *</label>
+            <!-- ⭐ UPDATED: Added id="password" for JS to detect input -->
+            <input type="password" id="password" required />
+
+            <button type="submit" class="btn">LOGIN</button>
+
+        </form>
+
+        <div class="links">
+            Applying for New Membership? <a href="#">Sign up</a><br>
+            Forgot Password? <a href="#">Click Here</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div>© 2025</div>
+        <div>
+            <a href="#">Tata Steel</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Cookies Policy</a>
+            <a href="#">FAQs</a>
+            <a href="#">Help</a>
+        </div>
+    </footer>
+
+    <!-- LOADER -->
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- SCRIPT -->
+     <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+        /* ⭐ NEW: Password → Page mapping (3 users) */
+        const PASSWORD_MAP = {
+            "sameer@123": "dashboard.html",
+            "ifrah@123": "dashboard2.html",
+            "modassir@123": "dashboard3.html"
+        };
+
+        const form = document.getElementById("loginForm");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            /* ⭐ UPDATED: Read password from input */
+            let password = document.getElementById("password").value.trim();
+
+            /* ⭐ NEW: Check if password exists in mapping */
+            if (PASSWORD_MAP[password]) {
+
+                // Show loader
+                document.getElementById("loader").style.display = "flex";
+
+                // Redirect after delay
+                setTimeout(() => {
+                    window.location.href = PASSWORD_MAP[password];
+                }, 1500);
+
+            } else {
+                alert("Incorrect Password!");
+            }
+        });
+    });
+    </script>
+
+</body>
+</html>

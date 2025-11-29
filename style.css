@@ -1,0 +1,97 @@
+/* Base styling */
+body {
+    background: #f2f5ff;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Center container */
+.container {
+    width: 90%;
+    max-width: 480px;
+    margin: 25px auto;
+}
+
+/* Blue header (Name & Active Subscriptions) */
+.blue-header {
+    background: #2575e7;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(37,117,231,0.25);
+}
+
+.blue-header.secondary {
+    margin-top: 20px;
+}
+
+/* Small blue bar (Subscription Number) */
+.blue-subheader {
+    background: #2575e7;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: 500;
+    margin: 10px 0 15px 0;
+    box-shadow: 0 4px 12px rgba(37,117,231,0.25);
+}
+
+/* White Cards */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Profile Image */
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 22px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+/* Membership text */
+.membership-label {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #2a2d3a;
+}
+
+.membership-label span {
+    font-weight: 600;
+}
+
+/* QR Code Box */
+.qr-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.qr-img {
+    width: 170px;
+    height: 170px;
+    padding: 12px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+/* Subscription Card Text */
+.subscription-card p {
+    font-size: 17px;
+    margin: 8px 0;
+    color: #2a2d3a;
+}
